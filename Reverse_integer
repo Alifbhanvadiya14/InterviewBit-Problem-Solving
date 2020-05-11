@@ -1,0 +1,27 @@
+int Solution::reverse(int A) {
+    long long int ans = 0;
+    
+    bool negativeNo = false;
+    if(A<0){
+        negativeNo = true;
+        A = -A;
+    }
+    
+    int prev = 0;
+    
+    while(A!=0){
+        int rem;
+        rem =A%10;
+        ans =ans *10 + rem;
+        A = A/10;
+    }
+    
+    if(negativeNo == true) ans = -ans;
+    
+    if(-2147483648 > ans)
+        return 0;
+
+    if(2147483647 < ans)
+    return 0;
+    
+    return  ans;
